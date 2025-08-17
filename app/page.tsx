@@ -190,93 +190,9 @@ export default function LandingPage() {
               </button>
             </div>
 
-            {/* TextChamp */}
-            <div className="card-hover bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="bg-green-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4">
-                  <i className="fas fa-book-open"></i>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">TextChamp</h3>
-                  <p className="text-green-600 font-medium">Comprehension Mastery</p>
-                </div>
-              </div>
-              
-              <div className="video-placeholder rounded-xl mb-6 h-48">
-                <i className="fas fa-play-circle"></i>
-                <div className="ml-4">
-                  <p className="text-sm">Demo Video</p>
-                  <p className="text-xs opacity-75">TextChamp Features</p>
-                </div>
-              </div>
-              
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Interactive text analysis and comprehension exercises
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Vocabulary building and context understanding
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Reading speed and accuracy improvement
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Adaptive learning with personalized pathways
-                </li>
-              </ul>
-              
-              <button className="w-full bg-green-600 text-white py-4 rounded-xl font-semibold hover:bg-green-700 transition block text-center">
-                Access TextChamp
-              </button>
-            </div>
 
-            {/* EssayMaster */}
-            <div className="card-hover bg-gradient-to-br from-orange-50 to-red-100 rounded-2xl p-8">
-              <div className="flex items-center mb-6">
-                <div className="bg-orange-600 text-white w-12 h-12 rounded-xl flex items-center justify-center mr-4">
-                  <i className="fas fa-pen-fancy"></i>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">EssayMaster</h3>
-                  <p className="text-orange-600 font-medium">Writing Excellence</p>
-                </div>
-              </div>
-              
-              <div className="video-placeholder rounded-xl mb-6 h-48">
-                <i className="fas fa-play-circle"></i>
-                <div className="ml-4">
-                  <p className="text-sm">Demo Video</p>
-                  <p className="text-xs opacity-75">EssayMaster in Action</p>
-                </div>
-              </div>
-              
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Step-by-step essay writing guidance
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Grammar and style enhancement tools
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Plagiarism detection and originality scoring
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <i className="fas fa-check-circle text-green-500 mr-3"></i>
-                  Real-time writing feedback and suggestions
-                </li>
-              </ul>
-              
-              <button className="w-full bg-orange-600 text-white py-4 rounded-xl font-semibold hover:bg-orange-700 transition block text-center">
-                Access EssayMaster
-              </button>
-            </div>
+
+
           </div>
         </div>
       </section>

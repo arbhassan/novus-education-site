@@ -166,12 +166,17 @@ export default function LandingPage() {
                 </div>
               </div>
               
-              <div className="video-placeholder rounded-xl mb-6 h-48">
-                <i className="fas fa-play-circle"></i>
-                <div className="ml-4">
-                  <p className="text-sm">Demo Video</p>
-                  <p className="text-xs opacity-75">KnowledgeBank in Action</p>
-                </div>
+              <div className="rounded-xl mb-6 overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="192"
+                  src="https://www.youtube.com/embed/jppXw_nZy6k"
+                  title="KnowledgeBank Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="rounded-xl"
+                ></iframe>
               </div>
               
               <ul className="space-y-3 mb-8">
@@ -193,9 +198,14 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition block text-center">
+              <a 
+                href="https://knowledgebank.novuseducationsg.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full bg-blue-600 text-white py-4 rounded-xl font-semibold hover:bg-blue-700 transition block text-center"
+              >
                 Access KnowledgeBank
-              </button>
+              </a>
             </div>
 
             {/* CompreAce */}
@@ -210,12 +220,17 @@ export default function LandingPage() {
                 </div>
               </div>
               
-              <div className="video-placeholder rounded-xl mb-6 h-48">
-                <i className="fas fa-play-circle"></i>
-                <div className="ml-4">
-                  <p className="text-sm">Demo Video</p>
-                  <p className="text-xs opacity-75">CompreAce Features</p>
-                </div>
+              <div className="rounded-xl mb-6 overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="192"
+                  src="https://www.youtube.com/embed/eukNLYbuFBg"
+                  title="CompreAce Demo Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="rounded-xl"
+                ></iframe>
               </div>
               
               <ul className="space-y-3 mb-8">
@@ -237,9 +252,14 @@ export default function LandingPage() {
                 </li>
               </ul>
               
-              <button className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition block text-center">
+              <a 
+                href="https://compreace.novuseducationsg.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full bg-purple-600 text-white py-4 rounded-xl font-semibold hover:bg-purple-700 transition block text-center"
+              >
                 Access CompreAce
-              </button>
+              </a>
             </div>
 
 
@@ -526,20 +546,6 @@ export default function LandingPage() {
               <p className="text-gray-300 mb-6 max-w-md">
                 Empowering JC students to achieve GP excellence through innovative learning technology and expert guidance from Singapore's top educators.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <i className="fab fa-facebook-f text-xl"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <i className="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <i className="fab fa-linkedin-in text-xl"></i>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  <i className="fab fa-youtube text-xl"></i>
-                </a>
-              </div>
             </div>
             
             <div>

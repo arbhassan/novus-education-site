@@ -1,9 +1,10 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 
 export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   // Smooth scrolling for anchor navigation links only
   useEffect(() => {
     const anchors = document.querySelectorAll('a[href^="#"]')
@@ -58,14 +59,62 @@ export default function LandingPage() {
               <a href="#books" className="text-gray-700 hover:text-indigo-600 font-medium">GP Resource Library</a>
               <a href="#tutors" className="text-gray-700 hover:text-indigo-600 font-medium">Meet Our Tutors</a>
               <a href="#contact" className="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
-              <Link href="#signup" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Get Started</Link>
-      </div>
+              <a href="https://calendly.com/scholarlyprep/joshua-novus" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Book Consultation</a>
+            </div>
             <div className="md:hidden">
-              <button className="text-gray-700">
-                <i className="fas fa-bars text-xl"></i>
-            </button>
+              <button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-gray-700 hover:text-indigo-600 transition"
+              >
+                <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+              </button>
             </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-200">
+            <div className="px-4 pt-2 pb-4 space-y-2">
+              <a 
+                href="#apps" 
+                className="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Our Apps
+              </a>
+              <a 
+                href="#books" 
+                className="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                GP Resource Library
+              </a>
+              <a 
+                href="#tutors" 
+                className="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Meet Our Tutors
+              </a>
+              <a 
+                href="#contact" 
+                className="block px-3 py-2 text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-lg transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </a>
+              <a 
+                href="https://calendly.com/scholarlyprep/joshua-novus" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition text-center font-medium mt-4"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book Consultation
+              </a>
+            </div>
+          </div>
+        )}
         </div>
       </nav>
 
@@ -81,7 +130,7 @@ export default function LandingPage() {
               Join Singapore's top JC students who trust NOVUS Education for GP excellence. Our expert tutors from NUS and elite institutions deliver personalized learning through cutting-edge apps and curated resources.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/scholarlyprep/novus-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
+              <a href="https://calendly.com/scholarlyprep/joshua-novus" target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
                 <i className="fas fa-calendar-check mr-2"></i>
                 Book Free Consultation
               </a>

@@ -403,8 +403,12 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Adam Anwar */}
             <div className="card-hover bg-white rounded-2xl p-8 border border-gray-200 text-center">
-              <div className="tutor-avatar rounded-full mx-auto mb-6">
-                <i className="fas fa-user"></i>
+              <div className="tutor-avatar rounded-full mx-auto mb-6 overflow-hidden">
+                <img 
+                  src="/adam.jpeg" 
+                  alt="Adam Anwar - NOVUS Education Tutor"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Adam Anwar</h3>
               <div className="space-y-1 mb-4">
@@ -418,8 +422,12 @@ export default function LandingPage() {
 
             {/* Joshua Lim */}
             <div className="card-hover bg-white rounded-2xl p-8 border border-gray-200 text-center">
-              <div className="tutor-avatar rounded-full mx-auto mb-6">
-                <i className="fas fa-user"></i>
+              <div className="tutor-avatar rounded-full mx-auto mb-6 overflow-hidden">
+                <img 
+                  src="/josh.jpeg" 
+                  alt="Joshua Lim - NOVUS Education Tutor"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Joshua Lim</h3>
               <div className="space-y-1 mb-4">
@@ -433,8 +441,12 @@ export default function LandingPage() {
 
             {/* Megan Ng */}
             <div className="card-hover bg-white rounded-2xl p-8 border border-gray-200 text-center">
-              <div className="tutor-avatar rounded-full mx-auto mb-6">
-                <i className="fas fa-user"></i>
+              <div className="tutor-avatar rounded-full mx-auto mb-6 overflow-hidden">
+                <img 
+                  src="/megan.jpeg" 
+                  alt="Megan Ng - NOVUS Education Tutor"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Megan Ng</h3>
               <div className="space-y-1 mb-4">
@@ -448,8 +460,12 @@ export default function LandingPage() {
 
             {/* Sherlyn Tan */}
             <div className="card-hover bg-white rounded-2xl p-8 border border-gray-200 text-center">
-              <div className="tutor-avatar rounded-full mx-auto mb-6">
-                <i className="fas fa-user"></i>
+              <div className="tutor-avatar rounded-full mx-auto mb-6 overflow-hidden">
+                <img 
+                  src="/sherlyn-tan.jpeg" 
+                  alt="Sherlyn Tan - NOVUS Education Tutor"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Sherlyn Tan</h3>
               <div className="space-y-1 mb-4">
@@ -463,8 +479,12 @@ export default function LandingPage() {
 
             {/* Mae Sann Choo */}
             <div className="card-hover bg-white rounded-2xl p-8 border border-gray-200 text-center lg:col-start-2">
-              <div className="tutor-avatar rounded-full mx-auto mb-6">
-                <i className="fas fa-user"></i>
+              <div className="tutor-avatar rounded-full mx-auto mb-6 overflow-hidden">
+                <img 
+                  src="/mae sann.jpeg" 
+                  alt="Mae Sann Choo - NOVUS Education Tutor"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Mae Sann Choo</h3>
               <div className="space-y-1 mb-4">
@@ -630,7 +650,6 @@ export default function LandingPage() {
           width: 120px;
           height: 120px;
           background: linear-gradient(45deg, #e0e7ff, #c7d2fe);
-          border: 3px solid #6366f1;
           display: flex;
           align-items: center;
           justify-content: center;

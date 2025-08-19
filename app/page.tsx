@@ -4,19 +4,22 @@ import { useEffect } from "react"
 import Link from "next/link"
 
 export default function LandingPage() {
-  // Smooth scrolling for navigation links
+  // Smooth scrolling for anchor navigation links only
   useEffect(() => {
     const anchors = document.querySelectorAll('a[href^="#"]')
     anchors.forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault()
         const href = (e.target as HTMLAnchorElement).getAttribute('href')
-        const target = href ? document.querySelector(href) : null
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          })
+        // Only process if it's actually an anchor link (starts with #)
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href)
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }
         }
       })
     })
@@ -52,7 +55,7 @@ export default function LandingPage() {
             </div>
             <div className="hidden md:flex space-x-8 items-center">
               <a href="#apps" className="text-gray-700 hover:text-indigo-600 font-medium">Our Apps</a>
-              <a href="#books" className="text-gray-700 hover:text-indigo-600 font-medium">Wall of Books</a>
+              <a href="#books" className="text-gray-700 hover:text-indigo-600 font-medium">GP Resource Library</a>
               <a href="#tutors" className="text-gray-700 hover:text-indigo-600 font-medium">Meet Our Tutors</a>
               <a href="#contact" className="text-gray-700 hover:text-indigo-600 font-medium">Contact</a>
               <Link href="#signup" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Get Started</Link>
@@ -78,13 +81,13 @@ export default function LandingPage() {
               Join Singapore's top JC students who trust NOVUS Education for GP excellence. Our expert tutors from NUS and elite institutions deliver personalized learning through cutting-edge apps and curated resources.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#apps" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
-                <i className="fas fa-rocket mr-2"></i>
-                Start Free Trial
-              </Link>
+              <a href="https://calendly.com/scholarlyprep/novus-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
+                <i className="fas fa-calendar-check mr-2"></i>
+                Book Free Consultation
+              </a>
               <Link href="#contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition inline-flex items-center justify-center">
-                <i className="fas fa-envelope mr-2"></i>
-                Get In Touch
+                <i className="fas fa-graduation-cap mr-2"></i>
+                Enroll A Level Program
               </Link>
             </div>
           </div>
@@ -201,123 +204,139 @@ export default function LandingPage() {
       <section id="books" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Wall of Books</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">GP Resource Library</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Curated collection of essential readings handpicked by our expert tutors to broaden your knowledge and enhance your GP performance
+              Comprehensive collection of GP study guides, essay templates, and exam strategies designed to boost your performance from mid-band to Band 1
             </p>
           </div>
 
           <div className="carousel-container">
             <div className="carousel-track" style={{width: '200%'}}>
-              {/* First set of books */}
+              {/* First set of GP resources */}
               <div className="flex space-x-6 mr-6">
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Economist</p>
-                    <p className="text-xs mt-2">Weekly Edition</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F9a8cb61a-58f0-40bf-9c28-c8ce980616e6%2FChatGPT_Image_Jul_29_2025_04_24_27_PM.png/size/w=380?exp=1755681809&sig=O24pl0syt8TMwEKV5cxmalzokDxrrA93ySaaJDTDjtQ&id=23f0d3e2-bb6d-806f-b98c-dd8d108cc53e&table=block"
+                    alt="Top 20 Cambridge GP Topics"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Thinking Fast & Slow</p>
-                    <p className="text-xs mt-2">Daniel Kahneman</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2Fe5ce3328-eeb9-41ae-8242-85b7e843ef4d%2FChatGPT_Image_Jul_29_2025_04_29_52_PM.png/size/w=380?exp=1755681812&sig=FtiJpLEKsQI8gmgcLrZvkqb2lh0JyagpFOORrfiuHEM&id=23f0d3e2-bb6d-807e-8e07-cfb0cc66ae7c&table=block"
+                    alt="Mid Band to Band 1 Essay Samples"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Sapiens</p>
-                    <p className="text-xs mt-2">Yuval Harari</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F72dde876-3f68-4e00-adab-7410deaa0537%2FChatGPT_Image_Jul_29_2025_04_36_18_PM.png/size/w=380?exp=1755681817&sig=kRGsQGvLJghgIv0Dgl5WsY-lT70_xiypN762CyeI4Ag&id=23f0d3e2-bb6d-809f-84fb-f55fccfad48a&table=block"
+                    alt="Score Booster Phrases for GP Essays"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The World is Flat</p>
-                    <p className="text-xs mt-2">Thomas Friedman</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2Ff265c776-1e1b-4139-858d-df581765e7fe%2FChatGPT_Image_Jul_29_2025_04_38_16_PM.png/size/w=380?exp=1755681819&sig=vC6RgdxTDJFTYLXJs2XqqevTffltJAZuEQsCtqLMkhk&id=23f0d3e2-bb6d-808f-8087-e39f413b47d5&table=block"
+                    alt="15 Arguments Templates for Any Essay Question"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Freakonomics</p>
-                    <p className="text-xs mt-2">Levitt & Dubner</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F8d4e3e7a-7548-43ae-b89c-ae7f3c3ca991%2FChatGPT_Image_Jul_29_2025_04_40_06_PM.png/size/w=380?exp=1755681821&sig=Tv_-zq20CfGsMD1uJZTt_mor3KySha0WU0r1kDVyxCs&id=23f0d3e2-bb6d-809c-b004-f23c0e075675&table=block"
+                    alt="How to Score 45/50 for GP Essay"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Power of Now</p>
-                    <p className="text-xs mt-2">Eckhart Tolle</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2Fc6396b73-d53f-4639-96a7-c588bcb1d92c%2FChatGPT_Image_Jul_29_2025_04_41_44_PM.png/size/w=380?exp=1755681823&sig=JVWB69t9HYZT2OTUF7rumemCy4wGbG_jUewy9P9chk4&id=23f0d3e2-bb6d-802e-916f-c0af7f96a9b3&table=block"
+                    alt="Top 20 GP Topics 2025 Edition"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Outliers</p>
-                    <p className="text-xs mt-2">Malcolm Gladwell</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F5a199368-35b1-4dfd-8221-bdfc60b9d81e%2FChatGPT_Image_Jul_29_2025_04_43_32_PM.png/size/w=380?exp=1755681826&sig=_yXyuyXYxgbeNERjSCBRjty65f3bQOjsDRUtgxVhaIc&id=23f0d3e2-bb6d-8069-afb3-cf04648f37b5&table=block"
+                    alt="GP Paper 2 Quick Revision Tool Kit"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Tipping Point</p>
-                    <p className="text-xs mt-2">Malcolm Gladwell</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F8caad618-ddf0-47ff-964b-965d520612eb%2FChatGPT_Image_Jul_29_2025_04_45_27_PM.png/size/w=380?exp=1755681828&sig=1NYd6WE2bgk-vdalVZVaQ2kKNjZMFFon4rZ4YJp-FUo&id=23f0d3e2-bb6d-80d4-aec6-ce458e2fe53a&table=block"
+                    alt="Model Essays - Climate, AI, Inequality"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-              {/* Duplicate set for seamless loop */}
+              {/* Second set of GP resources */}
               <div className="flex space-x-6">
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Economist</p>
-                    <p className="text-xs mt-2">Weekly Edition</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2Fa6a285c4-63c6-412c-9971-d6b5a58a1e7d%2FChatGPT_Image_Jul_29_2025_04_51_41_PM.png/size/w=380?exp=1755681830&sig=cc2aa0sbgyop0kfL1kodV0o6_scePtd1P2ZyF2LXLbc&id=23f0d3e2-bb6d-807d-bef3-f13dcbf9303a&table=block"
+                    alt="Top 50 Vocabulary in Context Questions"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Thinking Fast & Slow</p>
-                    <p className="text-xs mt-2">Daniel Kahneman</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F927890c1-5f4a-4873-8044-9338fc6f349b%2FChatGPT_Image_Jul_29_2025_04_53_48_PM.png/size/w=380?exp=1755681834&sig=SV7HuzZNwjumkLlyPlU303jS7nH8jm2utucmUWoA1ec&id=23f0d3e2-bb6d-8071-b059-c008bb3050a5&table=block"
+                    alt="50 Comprehension Traps and How to Outsmart Them"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Sapiens</p>
-                    <p className="text-xs mt-2">Yuval Harari</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F50781a62-873e-4cc5-8483-ddb49628e67e%2FChatGPT_Image_Jul_29_2025_04_57_12_PM.png/size/w=380?exp=1755681836&sig=fyBmI57blKd4eYhGf6FlCR4tcQ_vdGK8PdwvzcalAIk&id=23f0d3e2-bb6d-8000-8305-f78338fd749b&table=block"
+                    alt="Score Fast Think Deep - High Stress Tool Kit"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The World is Flat</p>
-                    <p className="text-xs mt-2">Thomas Friedman</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F73af11eb-45f2-40e7-82ef-4292c13e8e4f%2FChatGPT_Image_Jul_30_2025_09_45_34_AM.png/size/w=380?exp=1755681838&sig=-AXjMKuezJFxxV_FiSdG79V-SVUTP-RfkCnZ3ISMXrc&id=2400d3e2-bb6d-80ec-9671-cf875631e53a&table=block"
+                    alt="Score 27+ GP Reading Comprehension"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Freakonomics</p>
-                    <p className="text-xs mt-2">Levitt & Dubner</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F02e766ba-bdc1-482d-9e3b-738553eb24a6%2FChatGPT_Image_Jul_30_2025_10_33_42_AM.png/size/w=380?exp=1755681842&sig=RD8FYTOyq096bnCVGtGWUuEkHQ6L-zFd5wdCs14i9Y8&id=2400d3e2-bb6d-8008-b6d8-e24a4f694c5b&table=block"
+                    alt="Break the 30 Mark Barrier - GP Paper 2"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Power of Now</p>
-                    <p className="text-xs mt-2">Eckhart Tolle</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2Ff2a2db7b-445b-4e1a-a205-c66a7a9871e9%2FChatGPT_Image_Jul_30_2025_10_38_40_AM.png/size/w=380?exp=1755681843&sig=M_UIEbo6st21-JQEcsJKCramrGJRIR41dZr6hN5M6gA&id=2400d3e2-bb6d-80cd-aaf6-ec9c2b545c6b&table=block"
+                    alt="Common Mistakes in GP Comprehension"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">Outliers</p>
-                    <p className="text-xs mt-2">Malcolm Gladwell</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F4a96255d-4363-4680-8b3d-a97cdaab988f%2FChatGPT_Image_Jul_30_2025_10_41_28_AM.png/size/w=380?exp=1755681845&sig=71Ib_PT7NV2KInQzw3zXpTie_PzImVindhtLJabmwgw&id=2400d3e2-bb6d-80a5-a316-f47b6cb96aa5&table=block"
+                    alt="7 Must Know GP Essay Topics"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="book-cover rounded-lg shadow-md">
-                  <div>
-                    <p className="font-semibold">The Tipping Point</p>
-                    <p className="text-xs mt-2">Malcolm Gladwell</p>
-                  </div>
+                <div className="book-cover rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="https://img.notionusercontent.com/s3/prod-files-secure%2F0e28e540-810b-4715-b51f-c1ec5f175ba5%2F9df74a64-fec8-4bd7-b125-0fdaa466a54f%2FChatGPT_Image_Jul_31_2025_12_20_31_PM.png/size/w=380?exp=1755681848&sig=maRD9fpA_euQQ1V-YvkOB_tK_2oZB4YCOuudEwKzab4&id=2410d3e2-bb6d-80a7-a62c-dee396d3643e&table=block"
+                    alt="Score Booster Phrases for A Level GP Essays"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
         </div>
 
           <div className="text-center mt-12">
-            <Link href="#contact" className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition inline-block">
-              Explore Full Catalogue
-            </Link>
+            <a href="https://drive.google.com/drive/folders/1qSpc96KJjK3JP8zR4B2YZ5pliO405o93?usp=sharing" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition inline-block">
+              Access All Resources
+            </a>
           </div>
         </div>
       </section>
@@ -458,7 +477,7 @@ export default function LandingPage() {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li><a href="#apps" className="text-gray-300 hover:text-white transition">Our Apps</a></li>
-                <li><a href="#books" className="text-gray-300 hover:text-white transition">Wall of Books</a></li>
+                <li><a href="#books" className="text-gray-300 hover:text-white transition">GP Resource Library</a></li>
                 <li><a href="#tutors" className="text-gray-300 hover:text-white transition">Meet Our Tutors</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition">Success Stories</a></li>
               </ul>
@@ -469,15 +488,27 @@ export default function LandingPage() {
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-center">
                   <i className="fas fa-envelope mr-2"></i>
-                  hello@novuseducation.sg
+                  <a href="mailto:josh@novuseducationsg.com" className="hover:text-white transition">
+                    josh@novuseducationsg.com
+                  </a>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-phone mr-2"></i>
-                  +65 9123 4567
+                  <i className="fab fa-whatsapp mr-2"></i>
+                  <a href="https://wa.me/6591805377" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                    +65 91805377
+                  </a>
                 </li>
                 <li className="flex items-center">
-                  <i className="fas fa-map-marker-alt mr-2"></i>
-                  Singapore
+                  <i className="fab fa-instagram mr-2"></i>
+                  <a href="https://instagram.com/Novus_ed" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                    @Novus_ed
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <i className="fab fa-telegram mr-2"></i>
+                  <a href="https://t.me/NOVUSeducation" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                    NOVUSeducation
+                  </a>
                 </li>
               </ul>
             </div>
@@ -527,6 +558,16 @@ export default function LandingPage() {
           color: #6b7280;
           text-align: center;
           padding: 8px;
+          position: relative;
+        }
+        .book-cover img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 6px;
         }
         .video-placeholder {
           background: linear-gradient(45deg, #1f2937, #374151);

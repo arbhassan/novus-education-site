@@ -49,12 +49,15 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="bg-white shadow-sm fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center -my-8">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-indigo-600">NOVUS</h1>
-              <span className="ml-2 text-gray-600 font-medium">Education</span>
+              <img 
+                src="/logo.png" 
+                alt="NOVUS Education" 
+                className="h-32 w-auto"
+              />
             </div>
-            <div className="hidden md:flex space-x-8 items-center">
+            <div className="hidden md:flex space-x-4 items-center -ml-32">
               <a href="#apps" className="text-gray-700 hover:text-indigo-600 font-medium">Our Apps</a>
               <a href="#books" className="text-gray-700 hover:text-indigo-600 font-medium">GP Resource Library</a>
               <a href="#tutors" className="text-gray-700 hover:text-indigo-600 font-medium">Meet Our Tutors</a>
@@ -542,7 +545,11 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold mb-4">NOVUS Education</h3>
+              <img 
+                src="/logo.png" 
+                alt="NOVUS Education" 
+                className="h-32 w-auto mb-4 filter invert"
+              />
               <p className="text-gray-300 mb-6 max-w-md">
                 Empowering JC students to achieve GP excellence through innovative learning technology and expert guidance from Singapore's top educators.
               </p>

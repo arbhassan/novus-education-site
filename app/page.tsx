@@ -406,9 +406,9 @@ export default function LandingPage() {
         </div>
 
           <div className="text-center mt-12">
-            <a href="https://drive.google.com/drive/folders/1qSpc96KJjK3JP8zR4B2YZ5pliO405o93?usp=sharing" target="_blank" rel="noopener noreferrer" className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition inline-block">
+            <Link href="/resources" className="bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition inline-block">
               Access All Resources
-            </a>
+            </Link>
           </div>
         </div>
       </section>
